@@ -9,7 +9,10 @@ const client = new Client({
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
         GatewayIntentBits.MessageContent,
+		GatewayIntentBits.DirectMessages,
+		GatewayIntentBits.DirectMessageTyping,
     ],
+	partials: ['MESSAGE', 'CHANNEL']
 })
 client.commands = new Collection();
 const eventsPath = path.join(__dirname, 'events');
