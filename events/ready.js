@@ -1,23 +1,19 @@
-const { TextChannel } = require("discord.js")
-
 module.exports = {
     name: 'ready',
     once: true,
     execute(client){
-        //const user1 = client.users.fetch('373767659633770498')
-        //const user2 = client.users.fetch('657226698185637890')
-        client.users.fetch({ withPresences: true }).then(members => {
-            members.foreach(member =>{
-                dm.send(member.id, "ffs with this")
-            })
-        })
-/*
-        client.users.fetch('373767659633770498').then(dm => {
-            dm.send(user1.username + " welcome to the game")
-        })
-        client.users.fetch('657226698185637890').then(dm => {
-            dm.send(user2.username + " welcome to your game")
-        })*/
+
+        const guild = client.guilds.cache.get('934380732225302558');
+        guild.members.fetch({ withPresences: true }).then(fetchedMembers => {
+	        fetchedMembers.filter(member => {
+                if((!member.user.bot)&&(member.roles.cache.has("1066760497824800789"))){
+                    member.send(member.user.username)
+                }
+                
+                
+            });
+        });
+
     }
 
 }
