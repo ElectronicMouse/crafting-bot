@@ -5,6 +5,7 @@ require('dotenv/config');
 
 
 const client = new Client({
+	// possibly needs more or less intents (intents are things that our application has access to), will be updated in future based on needs
     intents: [
         GatewayIntentBits.Guilds,
         GatewayIntentBits.GuildMessages,
@@ -15,6 +16,7 @@ const client = new Client({
 		GatewayIntentBits.DirectMessageTyping,
 		GatewayIntentBits.MessageContent,
     ],
+	// tells us which things to resolve even without complete info
 	partials: ['MESSAGE', 'CHANNEL']
 })
 client.commands = new Collection();
