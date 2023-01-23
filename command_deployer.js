@@ -3,6 +3,8 @@ const path = require('node:path');
 const { REST, SlashCommandBuilder, Routes } = require('discord.js');
 require('dotenv/config');
 
+// CLIENT_ID is ID of our application, while GUILD_ID is ID of server/s he will operate on (for multiple servers needs to be array, and changes in code so that it resolves arrays)
+
 const CLIENT_ID = process.env.CLIENT_ID;
 //const GUILD_ID = process.env.GUILD_ID;
 
