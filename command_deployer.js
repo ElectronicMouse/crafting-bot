@@ -4,7 +4,7 @@ const { REST, SlashCommandBuilder, Routes } = require('discord.js');
 require('dotenv/config');
 
 const CLIENT_ID = process.env.CLIENT_ID;
-const GUILD_ID = process.env.GUILD_ID;
+//const GUILD_ID = process.env.GUILD_ID;
 
 const commands = []
 const commandsPath = path.join(__dirname, 'commands');
@@ -18,6 +18,15 @@ for (const file of commandFiles) {
 
 const rest = new REST({ version: '10' }).setToken(process.env.TOKEN);
 
+/**
+ * guild commands registration
+ */
+/*
 rest.put(Routes.applicationGuildCommands(CLIENT_ID, GUILD_ID), { body: commands })
+	.then((data) => console.log(`Successfully registered ${data.length} application commands.`))
+	.catch(console.error);
+*/
+
+rest.put(Routes.applicationCommands(CLIENT_ID),{ body: commands },)
 	.then((data) => console.log(`Successfully registered ${data.length} application commands.`))
 	.catch(console.error);
