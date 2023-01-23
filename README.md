@@ -1,2 +1,3 @@
 # crafting-bot
-new Bot idea, will be worked on as soon as I get time off
+- application has started its alpha phase
+- currently in development and in need of testing
